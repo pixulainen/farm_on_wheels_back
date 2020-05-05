@@ -1,6 +1,18 @@
 class BuyersController < ApplicationController
+
+  def create
+    buyer = Buyer.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], username: params[:username], password: params[:password],phone_number: params[:phone_number],)
+      if buyer.save
+       render json: {username: buyer.username, token: generate_token(id: buyer.id)}
+      else
+        puts "failed"
+       render json: user.errors, status: :unprocessable_entity
+     end
+  end
+
     def show
-        
+        buyer = Buyer.find_by(id: get_buyer.id)
+        render json: buyer, serializer: BuyerSerializer, include: "*.*"
     end
 
     def sign_in

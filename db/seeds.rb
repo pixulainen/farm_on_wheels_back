@@ -8,13 +8,35 @@
      Category.create(name:"Vegetables")
      Category.create(name:"Fruits")
      Category.create(name:"Dairy")
+     Category.create(name:"Meat")
 
-     jones =  Seller.create(first_name: "Jones", last_name: "Jay", email: "jj@email.com", password:"test", phone_number: "0748123456", store_name: "JJ Farm", store_description: "Welcome to JJ shop,we started to grow organic vegetables in 1993 since then he's been commited to supply London's market with the best vegetables" , store_photos: "https://img.etimg.com/thumb/width-640,height-480,imgsize-120883,resizemode-1,msid-65900138/small-and-marginal-farmers-are-to-see-better-days-with-a-free-of-cost-farmer-to-farmer-rental-program-through-this-revolutionary-app-by-tafes-jfarm-services.jpg", store_location: "Croydon" )
 
-    jordan = Seller.create(first_name: "Michael", last_name: "Jordan", email: "mj@nba.com", password:"test", phone_number: "0748123456", store_name: "NBA", store_description: "NBA store is created as a test to seed the database" , store_photos: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx9VDxHJ_IOx-R-yrXPfG8IVip-TW_kHGimw5toOBkG7jK1SGw&s", store_location: "London" )
-    jd =  Seller.create(first_name: "John", last_name: "Doe", email: "john@doe.com", password:"test", phone_number: "0748123456", store_name: "JD Organics", store_description: "JD started to grow organic vegetables in 1993 since then he's been commited to supply London's market with the best vegetables" , store_photos: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNkx9VDxHJ_IOx-R-yrXPfG8IVip-TW_kHGimw5toOBkG7jK1SGw&s", store_location: "London" )
-    Product.create(name: "Apple", description: "Granny Smith", price_kg: "2", quality: "Fresh", stock: 50, picture: "https://media.mnn.com/assets/images/2015/01/grannysmith.jpg.653x0_q80_crop-smart.jpg", seller_id: 1,category_id:1)
-    Product.create(name: "Apple", description: "Granny Smith", price_kg: "2", quality: "Fresh", stock: 50, picture: "https://media.mnn.com/assets/images/2015/01/grannysmith.jpg.653x0_q80_crop-smart.jpg", seller_id: 3,category_id:1)
-    Product.create(name: "Carrot", description: "Organic Carrots", price_kg: "2", quality: "Fresh", stock: 50, picture: "https://www.tasteofhome.com/wp-content/uploads/2019/01/carrots-shutterstock_789443206-1200x675.jpg", seller_id: 1,category_id:2)
-    Product.create(name: "Carrot", description: "Organic Carrots", price_kg: "2", quality: "Fresh", stock: 50, picture: "https://www.tasteofhome.com/wp-content/uploads/2019/01/carrots-shutterstock_789443206-1200x675.jpg", seller_id: 3,category_id:2)
+   jones =  Seller.create(first_name: "Michael", last_name: "John", email: "jm@email.com", password:"test", phone_number: "0748123456", store_name: "MJ Farm", store_description: "Welcome to Mj shop,we started to grow organic vegetables in 1993 since then he's been commited to supply London's market with the best vegetables" , store_photos: "https://img.etimg.com/thumb/width-640,height-480,imgsize-120883,resizemode-1,msid-65900138/small-and-marginal-farmers-are-to-see-better-days-with-a-free-of-cost-farmer-to-farmer-rental-program-through-this-revolutionary-app-by-tafes-jfarm-services.jpg", store_location: "Croydon" )
+    # Vegetables
+    Product.create(name: "Carrot", description: "Organic Carrots", price_kg: "2", quality: "Fresh", stock: 32, picture: "https://www.tasteofhome.com/wp-content/uploads/2019/01/carrots-shutterstock_789443206-1200x675.jpg", seller_id: 1,category_id:1)
+    Product.create(name: "Courgette", description: "Organic Courgette", price_kg: "2.5", quality: "Fresh", stock: 14, picture: "https://www.ocado.com/productImages/921/92186011_0_640x640.jpg?identifier=f6c7a748a22850cac8b8c04f3e61c961", seller_id: 1,category_id:1)
+    Product.create(name: "Potatoes", description: "Organic Potatoes", price_kg: "2", quality: "Fresh", stock: 55, picture: "https://assets.bonappetit.com/photos/5d7284758d926f0009df5cfc/5:4/w_3165,h_2532,c_limit/Basically-Gojuchang-Chicken-Potato.jpg", seller_id: 1,category_id:1)
+    Product.create(name: "Red Onion", description: "Organic Red Onion", price_kg: "2", quality: "Fresh", stock: 12, picture: "https://images.financialexpress.com/2020/01/2-179.jpg?w=1200&h=800&imflag=true", seller_id: 1,category_id:1)
+    Product.create(name: "Celery", description: "Organic Celery", price_kg: "1.5", quality: "Fresh", stock: 52, picture: "https://viewremedy.com/wp-content/uploads/2019/08/celery-benefits.jpg", seller_id: 1,category_id:1)
+    Product.create(name: "Avocado", description: "Organic Avocado", price_unit: "1", quality: "Fresh", stock: 56, picture: "https://media.self.com/photos/5b43712e4d0c3c282a8878d1/16:9/w_4160,h_2340,c_limit/avocado.jpg", seller_id: 1,category_id:2)
+    Product.create(name: "Aubergine", description: "Organic Aubergine", price_kg: "2", quality: "Fresh", stock: 37, picture: "https://www.nhm.ac.uk/content/dam/nhmwww/discover/aubergine-evolution/aubergine-shutterstock-full-width.jpg", seller_id: 1,category_id:1)
+    Product.create(name: "Peppers", description: "Organic Peppers", price_kg: "2.5", quality: "Fresh", stock: 19, picture: "https://www.thespruceeats.com/thmb/7uY4AzKFExUYSLmvt1Um5a2bcAc=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/bell-peppers-multi-g18-56a8bebc5f9b58b7d0f4c0f6.jpg", seller_id: 1,category_id:1)
+    Product.create(name: "Tomatoes", description: "Organic tomatoes", price_kg: "2", quality: "Fresh", stock: 20, picture: "https://www.organicfacts.net/wp-content/uploads/tomatoes.jpg", seller_id: 1,category_id:1)
+    Product.create(name: "Chilli", description: "Organic Chilli", price_kg: "10", quality: "Fresh", stock: 9, picture: "https://www.bhf.org.uk/-/media/new-site-images/informationsupport/heart-matters/december-2019/news/bth/chilli-peppers/chilli-peppers-620x400-ss-noexp.jpg", seller_id: 1,category_id:1)
+    Product.create(name: "Romaine Lettuce", description: "Organic Lettuce", price_kg: "2", quality: "Fresh", stock: 25, picture: "https://media4.s-nbcnews.com/j/newscms/2018_01/2281616/180104-romaine-lettuce-mn-0820_ec72c6630954ef7497ec89130e8dc742.fit-760w.jpg", seller_id: 1,category_id:1)
+
+
+
+    # Fruits
+    Product.create(name: "Oranges", description: "Organic Oranges", price_kg: "3", quality: "Fresh", stock: 43, picture: "https://cdn.britannica.com/24/174524-050-A851D3F2/Oranges.jpg", seller_id: 1,category_id:2)
+    Product.create(name: "Strawberry", description: "Organic Strawberry", price_kg: "8", quality: "Fresh", stock: 11, picture: "https://cdn.britannica.com/22/75922-050-D3982BD0/flowers-fruits-garden-strawberry-plant-species.jpg", seller_id: 1,category_id:2)
+    Product.create(name: "Apple", description: "Granny Smith", price_kg: "2", quality: "Fresh", stock: 12, picture: "https://media.mnn.com/assets/images/2015/01/grannysmith.jpg.653x0_q80_crop-smart.jpg", seller_id: 1,category_id:2)
+    Product.create(name: "Raspberries", description: "Organic Raspberries", price_kg: "10", quality: "Fresh", stock: 23, picture: "https://cdn.shopify.com/s/files/1/1733/7409/products/Raspberries_f9263c6c-e4a7-41d9-b6a5-e795446631e4_x700.jpg?v=1539275589", seller_id: 1,category_id:2)
+    Product.create(name: "Blueberries", description: "Organic Blueberries", price_kg: "13.5", quality: "Fresh", stock: 21, picture: "https://www.news-medical.net/image.axd?picture=2020%2F4%2Fshutterstock_321102602_(1).jpg", seller_id: 1,category_id:2)
+    Product.create(name: "Banana", description: "Bananas", price_kg: "1.5", quality: "Fresh", stock: 40, picture: "https://cdn.mos.cms.futurecdn.net/42E9as7NaTaAi4A6JcuFwG-1024-80.jpg", seller_id: 1,category_id:2)
+    Product.create(name: "Lemon", description: "Lemons", price_kg: "1", quality: "Fresh", stock: 20, picture: "https://cdn.britannica.com/84/188484-050-F27B0049/lemons-tree.jpg", seller_id: 1,category_id:2)
+    Product.create(name: "Dragon Fruit", description: "Dragon Fruit", price_kg: "3", quality: "Fresh", stock: 15, picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Pitaya_cross_section_ed2.jpg/1467px-Pitaya_cross_section_ed2.jpg", seller_id: 1,category_id:2)
+    Product.create(name: "Kiwi", description: "Kiwi Fruit", price_kg: "4", quality: "Fresh", stock: 19, picture: "https://recipematic.com/wp-content/uploads/2019/07/How-to-Choose-Store-How-to-Use-Kiwi-Fruit-Benefits-of-Kiwi-Fruit-Calories-and-Nutrition-Facts-tips-1200x1253.jpg", seller_id: 1,category_id:2)
+
+    # end
     puts " Seeded!,Seeded!,Seeded!"

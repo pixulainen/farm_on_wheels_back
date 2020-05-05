@@ -1,5 +1,5 @@
 class OrderSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id,:created_at,:total
   has_one :seller
-  has_one :buyer
+  has_many :products
 end

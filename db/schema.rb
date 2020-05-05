@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_100421) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
-    t.integer "phone_number"
+    t.bigint "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2020_04_23_100421) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "price_unit"
-    t.string "price_kg"
+    t.integer "price_unit"
+    t.integer "price_kg"
     t.string "quality"
     t.integer "stock"
     t.string "picture"
