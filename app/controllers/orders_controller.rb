@@ -9,11 +9,17 @@ class OrdersController < ApplicationController
         render json: order
     end
     def create
-        order = Order.create(seller_id: params[:seller], buyer_id: get_buyer.id)
+        order = Order.create(seller_id: params[:seller], buyer_id: get_buyer.id,total: params[:total])
         # for each product create a order_product
         products = params[:products]
         products.each do |product|
-            OrderProduct.create(order_id: order.id, product_id: product["id"])
+            quantity = product["stock"]
+            stock_product = Product.find(product["id"])
+            # if stock_product.stock - quantity > 0
+
+            stock_product.update(stock: stock_product.stock - quantity)
+            # byebug
+            OrderProduct.create(order_id: order.id, product_id: product["id"],quantity:quantity)
         end
 
         render json: order

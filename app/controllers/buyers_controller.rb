@@ -6,7 +6,7 @@ class BuyersController < ApplicationController
        render json: {username: buyer.username, token: generate_token(id: buyer.id)}
       else
         puts "failed"
-       render json: user.errors, status: :unprocessable_entity
+       render json: buyer.errors, status: :unprocessable_entity
      end
   end
 
@@ -14,7 +14,22 @@ class BuyersController < ApplicationController
         buyer = Buyer.find_by(id: get_buyer.id)
         render json: buyer, serializer: BuyerSerializer, include: "*.*"
     end
+     
+    def add_seller_to_favourite
+      buyer = Buyer.find(get_buyer.id)
+      seller = Seller.find_by(id:params[:sellerId])
 
+        buyer.favorite(seller)
+        render json: buyer.all_favorited
+    end
+
+    def remove_seller_from_favourite
+      buyer = Buyer.find(get_buyer.id)
+      seller = Seller.find_by(id:params[:sellerId])
+
+      buyer.unfavorite(seller)
+      render json: buyer.all_favorited
+    end
     def sign_in
         buyer = Buyer.find_by(username: params[:username])
         if buyer && buyer.authenticate(params[:password])
