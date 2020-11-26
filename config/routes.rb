@@ -9,6 +9,5 @@ Rails.application.routes.draw do
   post "/buyer-sign-in", to: "buyers#sign_in"
   get "/buyer-validate", to: "buyers#validate"
   post '/products/search', to: "products#search"
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

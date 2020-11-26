@@ -1,12 +1,12 @@
 class BuyersController < ApplicationController
 
   def create
-    buyer = Buyer.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], username: params[:username], password: params[:password],phone_number: params[:phone_number],)
+    buyer = Buyer.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], username: params[:username], password: params[:password],phone_number: params[:phone_number])
       if buyer.save
        render json: {username: buyer.username, token: generate_token(id: buyer.id)}
       else
         puts "failed"
-       render json: user.errors, status: :unprocessable_entity
+       render json: buyer.errors, status: :unprocessable_entity
      end
   end
 
@@ -30,5 +30,5 @@ class BuyersController < ApplicationController
           render json: { error: "You are not authorized" }
         end
     end
-    
+ 
 end
