@@ -30,5 +30,5 @@ class BuyersController < ApplicationController
           render json: { error: "You are not authorized" }
         end
     end
- 
+  
 end

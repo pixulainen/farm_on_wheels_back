@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2020_04_23_100421) do
   create_table "order_products", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "product_id", null: false
-    t.string "total"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_order_products_on_order_id"
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_04_23_100421) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.string "total"
     t.bigint "seller_id", null: false
     t.bigint "buyer_id", null: false
     t.datetime "created_at", precision: 6, null: false

@@ -9,13 +9,14 @@ class OrdersController < ApplicationController
         render json: order
     end
     def create
-        order = Order.create(seller_id: params[:seller], buyer_id: get_buyer.id)
-        # for each product create a order_product
-        products = params[:products]
-        products.each do |product|
-            OrderProduct.create(order_id: order.id, product_id: product["id"])
+        order = Order.create(seller_id: params[:seller], buyer_id: get_buyer.id, total: params["total"])
+        debugger
+         create_payment(order.id)
+            # for each product create a order_product
+            products = params[:products]
+            products.each do |product|
+                OrderProduct.create(order_id: order.id, product_id: product["id"])
+            render json: order
         end
-
-        render json: order
     end
 end
