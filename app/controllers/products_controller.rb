@@ -11,7 +11,16 @@ class ProductsController < ApplicationController
     end
 
     def index
-        products = Product.all
-        render json: products, each_serializer: ProductSerializer, include: "*"	
+        search_param = params[:starts_with].downcase
+        products = Product.where(nil)
+
+        products = products.filter_by_category(params[:category]) if params[:category].present?
+        products = products.filter { |product | product.name.downcase.start_with?(search_param)}
+
+        if products
+            render json: products.first(12), each_serializer: ProductSerializer, include: "*.*"	
+            else
+                render json: { error: "error"}
+            end
     end
 end
